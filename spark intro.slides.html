@@ -13202,13 +13202,83 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="RDD">RDD<a class="anchor-link" href="#RDD">&#182;</a></h1>
+<h1 id="Spark">Spark<a class="anchor-link" href="#Spark">&#182;</a></h1><ul>
+<li>Cluster computing software</li>
+<li>Extends map-reduce model to queries, dataframes and stream processing abstracting over cluster infrastructure and related complexity</li>
+<li>In-memory intermediate storage</li>
+<li>Structured data (tables) and semi-structured data (Json, XML) </li>
+</ul>
+
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Spark-components">Spark components<a class="anchor-link" href="#Spark-components">&#182;</a></h1><ul>
+<li>Language support: Scala, Java, Python, R...</li>
+<li>Additional libraries: Spark SQL, ML-Lib, GraphX, Streaming</li>
+<li>Base libraries: Spark Core, RDD API, DataFrame API</li>
+<li>Cluster Management: Yarn, Mesos, Standalone, K8</li>
+<li>Storage / data sources: Local, HDFS, S3, RDBMS, NoSQL</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Spark-cluster-architecture">Spark cluster architecture<a class="anchor-link" href="#Spark-cluster-architecture">&#182;</a></h1><p>Each Spark application gets an independent set of executor JVMs that only run tasks and store data for that application. 
+Key configuration parameters:</p>
+<ul>
+<li>spark.executor.cores: max tasks per executor. </li>
+<li>spark.executor.memory: max mem per executor.</li>
+</ul>
+<p><img src="https://spark.apache.org/docs/latest/img/cluster-overview.png" alt="spark architecture"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Key-Spark-abstractions-&amp;-concepts">Key Spark abstractions &amp; concepts<a class="anchor-link" href="#Key-Spark-abstractions-&amp;-concepts">&#182;</a></h1><ul>
+<li>Job: paralell computation consisting of multiple tasks</li>
+<li>RDD (Resilient Distributed Dataset). A collection of elements.<ul>
+<li>Immutable</li>
+<li>Partitioned</li>
+<li>Enable efficient data reuse</li>
+<li>fault-tolerant parallel data structures</li>
+<li>Intermediate persistence</li>
+<li>Partition &amp; placement control</li>
+<li>Manipulation through coarse-grained transforms: (map, filter, persist, groupByKey, join...)</li>
+</ul>
+</li>
+<li>Task: Single operation happening on a specific RDD partition</li>
+<li><p>DAG (Directed Acyclic Graph) Scheduler.</p>
+<ul>
+<li>Transforms a logical execution plan of RDD lineage dependencies to a physical execution plan.</li>
+</ul>
+</li>
+<li><p>DataFrame: 2-dimensional data structure of heterogeneous types</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="RDD">RDD<a class="anchor-link" href="#RDD">&#182;</a></h1><p>Resilient Distributed Dataset</p>
+
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">data</span> <span class="k">=</span> <span class="nc">Range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span>
@@ -13225,14 +13295,14 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[75]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>data: scala.collection.immutable.Range = Range 0 until 100
-distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at parallelize at &lt;console&gt;:40
+distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[0] at parallelize at &lt;console&gt;:26
 </pre>
 </div>
 
@@ -13241,18 +13311,10 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://spark.apache.org/docs/latest/api/scala/org/apache/spark/rdd/RDD.html">RDD documentation https://spark.apache.org/docs/latest/api/scala/org/apache/spark/rdd/RDD.html</a></p>
-
-</div>
-</div>
-</div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">doubled</span> <span class="k">=</span> <span class="n">distData</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span><span class="o">)</span>
@@ -13268,13 +13330,13 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>doubled: org.apache.spark.rdd.RDD[Int] = MapPartitionsRDD[5] at map at &lt;console&gt;:28
+<pre>doubled: org.apache.spark.rdd.RDD[Int] = MapPartitionsRDD[1] at map at &lt;console&gt;:26
 </pre>
 </div>
 
@@ -13283,7 +13345,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
@@ -13317,7 +13379,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
@@ -13351,15 +13413,62 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section></section><section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="n">doubled</span><span class="o">.</span><span class="n">partitions</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>res1: Int = 32
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://spark.apache.org/docs/latest/api/scala/org/apache/spark/rdd/RDD.html">RDD documentation https://spark.apache.org/docs/latest/api/scala/org/apache/spark/rdd/RDD.html</a></p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="DataFrame">DataFrame<a class="anchor-link" href="#DataFrame">&#182;</a></h1><p>Strongly typed collection of objects that can be transformed in parallel using functional or relational operations.</p>
 <ul>
 <li><a href="https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/index.html">DataFrame</a></li>
+</ul>
+<ul>
 <li><a href="https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html">DataSet</a></li>
 </ul>
+
+<pre><code>typeDataFrame = Dataset[Row]
+val row = Row(1, true, "a string", null)</code></pre>
 
 </div>
 </div>
@@ -13401,7 +13510,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
@@ -13439,7 +13548,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[50]:</div>
@@ -13473,7 +13582,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[51]:</div>
@@ -13507,7 +13616,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[54]:</div>
@@ -13541,7 +13650,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[53]:</div>
@@ -13578,7 +13687,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[55]:</div>
@@ -13612,7 +13721,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[69]:</div>
@@ -13663,7 +13772,7 @@ distData: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[21] at paralleli
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">

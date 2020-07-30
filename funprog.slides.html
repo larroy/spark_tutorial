@@ -13225,7 +13225,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">lastName</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">weight</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">height_cm</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
@@ -13241,7 +13241,36 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Intitializing Scala interpreter ...</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Spark Web UI available at http://192.168.1.32:4040
+SparkContext available as &#39;sc&#39; (version = 3.0.0, master = local[*], app id = local-1596098935970)
+SparkSession available as &#39;spark&#39;
+</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -13259,7 +13288,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">pedro</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Pedro&quot;</span><span class="o">,</span> <span class="s">&quot;Larroy&quot;</span><span class="o">,</span> <span class="mi">39</span><span class="o">,</span> <span class="mi">67</span><span class="o">,</span> <span class="mi">174</span><span class="o">)</span>
@@ -13279,7 +13308,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13287,7 +13316,7 @@ a.anchor-link {
 <div class="output_text output_subarea output_execute_result">
 <pre>pedro: Person = Person(Pedro,Larroy,39,67,174)
 bmi: (person: Person)Double
-res28: Double = 65.0
+res0: Double = 65.0
 </pre>
 </div>
 
@@ -13296,18 +13325,19 @@ res28: Double = 65.0
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For making changes you have to create a copy</p>
+<h1 id="Case-classes">Case classes<a class="anchor-link" href="#Case-classes">&#182;</a></h1><p>(Product types, conjunction). Think of "AND"
+They are immutable: for making changes you have to create a copy</p>
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">mary</span> <span class="k">=</span> <span class="n">pedro</span><span class="o">.</span><span class="n">copy</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Mary&quot;</span><span class="o">,</span> <span class="n">lastName</span><span class="o">=</span><span class="s">&quot;Poppins&quot;</span><span class="o">)</span>
@@ -13323,7 +13353,7 @@ res28: Double = 65.0
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[54]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13338,26 +13368,36 @@ res28: Double = 65.0
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Case classes are an example of product types (the set of possible values are its cartessian product). </li>
+<li>Another example of product types are tuples.</li>
+</ul>
+
+</div>
+</div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Case classes are an example of product types (the set of possible values are its cartessian product). 
-Another example of product types are tuples.</p>
-<p>One instance of ADTs are sum types</p>
-<h1 id="Sum-types">Sum types<a class="anchor-link" href="#Sum-types">&#182;</a></h1><p>Sum types must be an instance of one of the types exclusively, ValidationError OR RuntimeError</p>
+<h1 id="Sum-types">Sum types<a class="anchor-link" href="#Sum-types">&#182;</a></h1><p>Disjunction, think of OR.
+Sum types must be an instance of one of the types exclusively.
+In the example below, we can only have either ValidationError OR RuntimeError</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Error</span>
-<span class="k">case</span> <span class="k">object</span> <span class="nc">ValidationError</span>
-<span class="k">case</span> <span class="k">object</span> <span class="nc">RuntimeError</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">ValidationError</span> <span class="k">extends</span> <span class="nc">Error</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">RuntimeError</span> <span class="k">extends</span> <span class="nc">Error</span>
 </pre></div>
 
     </div>
@@ -13370,7 +13410,7 @@ Another example of product types are tuples.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[83]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13387,10 +13427,18 @@ defined object RuntimeError
 </div>
 </div>
 
-</div><div class="fragment">
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Sum-types">Sum types<a class="anchor-link" href="#Sum-types">&#182;</a></h1><p>Can help for precise error handling and program correctness</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">case</span> <span class="k">class</span> <span class="nc">Tag</span><span class="o">(</span><span class="n">t</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">attrs</span><span class="k">:</span> <span class="kt">Object</span><span class="o">)</span>
@@ -13407,7 +13455,7 @@ defined object RuntimeError
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[85]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -13423,10 +13471,10 @@ parse: (x: String)Either[Tag,Error]
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">doSmth</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="n">parse</span><span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
@@ -13445,16 +13493,13 @@ parse: (x: String)Either[Tag,Error]
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[94]:</div>
+    <div class="prompt output_prompt">Out[33]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;console&gt;:33: warning: unreachable code
-           case Right(error: Error) =&gt; {???}
-                                        ^
-doSmth: (x: String)Unit
+<pre>doSmth: (x: String)Unit
 </pre>
 </div>
 
@@ -13524,13 +13569,20 @@ final def flatMap[B](f: (A) =&gt; Option[B]): Option[B]
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Option">Option<a class="anchor-link" href="#Option">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">maybe_s</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">&quot;string value&quot;</span><span class="o">)</span>
-<span class="k">val</span> <span class="n">maybe_sz</span> <span class="k">=</span> <span class="n">x</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">size</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">maybe_sz</span> <span class="k">=</span> <span class="n">maybe_s</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">size</span><span class="o">)</span>
 <span class="k">def</span> <span class="n">psize</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">x</span> <span class="k">match</span> <span class="o">{</span>
     <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="s">s&quot;string length: </span><span class="si">$x</span><span class="s">&quot;</span>
     <span class="k">case</span> <span class="nc">None</span> <span class="k">=&gt;</span> <span class="s">&quot;string is empty&quot;</span>
@@ -13548,7 +13600,7 @@ final def flatMap[B](f: (A) =&gt; Option[B]): Option[B]
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[66]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13557,7 +13609,7 @@ final def flatMap[B](f: (A) =&gt; Option[B]): Option[B]
 <pre>maybe_s: Some[String] = Some(string value)
 maybe_sz: Option[Int] = Some(12)
 psize: (x: Option[Int])String
-res37: String = string length: 12
+res5: String = string length: 12
 </pre>
 </div>
 
@@ -13567,9 +13619,16 @@ res37: String = string length: 12
 </div>
 
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Option">Option<a class="anchor-link" href="#Option">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">mx</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
@@ -13586,14 +13645,14 @@ res37: String = string length: 12
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[81]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>mx: Some[Int] = Some(5)
-res47: Option[Int] = Some(500000)
+res6: Option[Int] = Some(500000)
 </pre>
 </div>
 
@@ -13602,10 +13661,10 @@ res47: Option[Int] = Some(500000)
 </div>
 </div>
 
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">mx</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
@@ -13625,7 +13684,7 @@ res47: Option[Int] = Some(500000)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[82]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13633,7 +13692,7 @@ res47: Option[Int] = Some(500000)
 <div class="output_text output_subarea output_execute_result">
 <pre>mx: Some[Int] = Some(5)
 times2: (x: Int)Option[Int]
-res48: Option[Int] = Some(10)
+res7: Option[Int] = Some(10)
 </pre>
 </div>
 
@@ -13645,7 +13704,7 @@ res48: Option[Int] = Some(10)
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">x</span> <span class="k">=</span> <span class="nc">None</span> <span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span>
@@ -13662,14 +13721,14 @@ res48: Option[Int] = Some(10)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[69]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>x: Option[Int] = None
-res40: Option[Int] = None
+res8: Option[Int] = None
 </pre>
 </div>
 
@@ -13703,10 +13762,18 @@ html.flatMap(_.get("p")).flatMap(_.get("a")).flatMap(_.get("img")).map(doSomethi
 <h1 id="Higher-order-and-polymorphic-functions">Higher order and polymorphic functions<a class="anchor-link" href="#Higher-order-and-polymorphic-functions">&#182;</a></h1>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Partial, fix a number of arguments from a function, producing a function of smaller arity. f(A,B) -&gt; C    to  g(B) -&gt; C</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">partial1</span><span class="o">[</span><span class="kt">A</span><span class="p">,</span> <span class="kt">B</span><span class="p">,</span> <span class="kt">C</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=&gt;</span> <span class="n">C</span> <span class="k">=</span>  <span class="o">{</span> <span class="o">???</span> <span class="o">}</span>
@@ -13722,152 +13789,13 @@ html.flatMap(_.get("p")).flatMap(_.get("a")).flatMap(_.get("img")).map(doSomethi
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>partial1: [A, B, C](a: A, f: (A, B) =&gt; C)B =&gt; C
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="n">partial1</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-scala.NotImplementedError: an implementation is missing
-  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:288)
-  at partial1(&lt;console&gt;:24)
-  ... 37 elided
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">partial1</span><span class="o">[</span><span class="kt">A</span><span class="p">,</span> <span class="kt">B</span><span class="p">,</span> <span class="kt">C</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=&gt;</span> <span class="n">C</span> <span class="k">=</span>  <span class="o">{</span> 
-    <span class="o">(</span><span class="n">b</span><span class="k">:</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span>
-<span class="o">}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>partial1: [A, B, C](a: A, f: (A, B) =&gt; C)B =&gt; C
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="n">partial1</span><span class="o">(</span><span class="s">&quot;The &quot;</span><span class="o">,</span> <span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>f: String =&gt; String = $Lambda$2380/0x0000000840e72040@666f6485
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">curry</span><span class="o">[</span><span class="kt">A</span><span class="p">,</span><span class="kt">B</span><span class="p">,</span><span class="kt">C</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span> <span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="n">B</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span> <span class="o">???</span> <span class="o">}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>curry: [A, B, C](f: (A, B) =&gt; C)A =&gt; (B =&gt; C)
 </pre>
 </div>
 
@@ -13882,8 +13810,8 @@ scala.NotImplementedError: an implementation is missing
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">curry</span><span class="o">[</span><span class="kt">A</span><span class="p">,</span><span class="kt">B</span><span class="p">,</span><span class="kt">C</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span> <span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="n">B</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
-    <span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">partial1</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">f</span><span class="o">)</span>
+<div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">partial1</span><span class="o">[</span><span class="kt">A</span><span class="p">,</span> <span class="kt">B</span><span class="p">,</span> <span class="kt">C</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=&gt;</span> <span class="n">C</span> <span class="k">=</span>  <span class="o">{</span> 
+    <span class="o">(</span><span class="n">b</span><span class="k">:</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span>
 <span class="o">}</span>
 </pre></div>
 
@@ -13903,6 +13831,152 @@ scala.NotImplementedError: an implementation is missing
 
 
 <div class="output_text output_subarea output_execute_result">
+<pre>partial1: [A, B, C](a: A, f: (A, B) =&gt; C)B =&gt; C
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">g</span> <span class="k">=</span> <span class="n">partial1</span><span class="o">(</span><span class="s">&quot;The &quot;</span><span class="o">,</span> <span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>g: String =&gt; String = $Lambda$2279/0x0000000840d33840@7515663f
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="n">g</span><span class="o">(</span><span class="s">&quot;light&quot;</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>res16: String = The light
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Currying">Currying<a class="anchor-link" href="#Currying">&#182;</a></h1><p>Take multiple arguments, one at a time.  f(A,B,C) -&gt; g(A)(B)(C)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">curry</span><span class="o">[</span><span class="kt">A</span><span class="p">,</span><span class="kt">B</span><span class="p">,</span><span class="kt">C</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span> <span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="n">B</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span> <span class="o">???</span> <span class="o">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>curry: [A, B, C](f: (A, B) =&gt; C)A =&gt; (B =&gt; C)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">curry</span><span class="o">[</span><span class="kt">A</span><span class="p">,</span><span class="kt">B</span><span class="p">,</span><span class="kt">C</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span> <span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="n">B</span> <span class="k">=&gt;</span> <span class="n">C</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">partial1</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">f</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
 <pre>curry: [A, B, C](f: (A, B) =&gt; C)A =&gt; (B =&gt; C)
 </pre>
 </div>
@@ -13915,7 +13989,7 @@ scala.NotImplementedError: an implementation is missing
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="n">curry</span><span class="o">((</span><span class="n">a</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)(</span><span class="s">&quot;The &quot;</span><span class="o">)(</span><span class="s">&quot;light&quot;</span><span class="o">)</span>
@@ -13931,13 +14005,13 @@ scala.NotImplementedError: an implementation is missing
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>res12: String = The light
+<pre>res11: String = The light
 </pre>
 </div>
 
@@ -13968,12 +14042,87 @@ scala.NotImplementedError: an implementation is missing
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="List">List<a class="anchor-link" href="#List">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">xs</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>xs: List[Int] = List(1, 2, 3)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">m</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="s">&quot;John&quot;</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">,</span> <span class="s">&quot;Mary&quot;</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>m: scala.collection.immutable.Map[String,Int] = Map(John -&gt; 3, Mary -&gt; 2)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">xs</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">)</span>
+<div class=" highlight hl-scala"><pre><span></span><span class="n">m</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13992,41 +14141,7 @@ scala.NotImplementedError: an implementation is missing
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>xs: List[Int] = List(1, 2, 3)
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">m</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="s">&quot;John&quot;</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">,</span> <span class="s">&quot;Mary&quot;</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[30]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>m: scala.collection.immutable.Map[String,Int] = Map(John -&gt; 3, Mary -&gt; 2)
+<pre>res12: Int = 3
 </pre>
 </div>
 
@@ -14038,41 +14153,7 @@ scala.NotImplementedError: an implementation is missing
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="n">m</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[31]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>res16: Int = 3
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">all</span> <span class="k">=</span> <span class="n">m</span> <span class="o">+</span> <span class="o">(</span><span class="s">&quot;Me&quot;</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">)</span>
@@ -14088,7 +14169,7 @@ scala.NotImplementedError: an implementation is missing
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -14106,10 +14187,104 @@ scala.NotImplementedError: an implementation is missing
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="n">m</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>res13: scala.collection.immutable.Map[String,Int] = Map(John -&gt; 3, Mary -&gt; 2)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's check the definition of <strong>Map</strong> from Scaladoc</p>
+
+<pre><code>traitMap[K, +V] extends Iterable[(K, V)] with collection.Map[K, V] with MapOps[K, V, Map, Map[K, V]] with MapFactoryDefaults[K, V, Map, Iterable]</code></pre>
+<p>The <code>+V</code> means the <code>V</code> type is <strong>covariant</strong>, so a <code>Map[String, Cat]</code> is also a <code>Map[String, Animal]</code> if  <code>Cat</code> extends <code>Animal</code>. A minus <code>-</code> sign indicates the reverse, also called contravariance.</p>
+
+<pre><code>class Foo[+A] // A covariant class
+class Bar[-A] // A contravariant class
+class Baz[A]  // An invariant class</code></pre>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Pattern-matching-on-Lists">Pattern matching on Lists<a class="anchor-link" href="#Pattern-matching-on-Lists">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">people</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="s">&quot;Mary&quot;</span><span class="o">,</span> <span class="s">&quot;Peter&quot;</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>people: List[String] = List(John, Mary, Peter)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">is_everybodyPresent</span><span class="o">(</span><span class="n">xs</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="n">xs</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="kc">false</span>
+    <span class="k">case</span> <span class="s">&quot;John&quot;</span> <span class="o">::</span> <span class="s">&quot;Mary&quot;</span> <span class="o">::</span> <span class="s">&quot;Peter&quot;</span> <span class="o">::</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="kc">true</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="kc">false</span>
+<span class="o">}</span>
 </pre></div>
 
     </div>
@@ -14128,63 +14303,7 @@ scala.NotImplementedError: an implementation is missing
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>res19: scala.collection.immutable.Map[String,Int] = Map(John -&gt; 3, Mary -&gt; 2)
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's check the definition of List from Scaladoc</p>
-
-<pre><code>traitMap[K, +V] extends Iterable[(K, V)] with collection.Map[K, V] with MapOps[K, V, Map, Map[K, V]] with MapFactoryDefaults[K, V, Map, Iterable]</code></pre>
-<p>The <code>+V</code> means the V type is covariant, so a <code>Map[String, Cat]</code> is also a <code>Map[String, Animal]</code> if  <code>Cat</code> extends <code>Animal</code>. A minus <code>-</code> sign indicates the reverse, also called contravariance.</p>
-
-<pre><code>class Foo[+A] // A covariant class
-class Bar[-A] // A contravariant class
-class Baz[A]  // An invariant class</code></pre>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pattern-matching-on-Lists">Pattern matching on Lists<a class="anchor-link" href="#Pattern-matching-on-Lists">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">people</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="s">&quot;Mary&quot;</span><span class="o">,</span> <span class="s">&quot;Peter&quot;</span><span class="o">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[37]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>people: List[String] = List(John, Mary, Peter)
+<pre>is_everybodyPresent: (xs: List[String])Boolean
 </pre>
 </div>
 
@@ -14196,45 +14315,7 @@ class Baz[A]  // An invariant class</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-scala"><pre><span></span><span class="k">def</span> <span class="n">is_everybodyPresent</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">xs</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="n">xs</span> <span class="k">match</span> <span class="o">{</span>
-    <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="kc">false</span>
-    <span class="k">case</span> <span class="s">&quot;John&quot;</span> <span class="o">::</span> <span class="s">&quot;Mary&quot;</span> <span class="o">::</span> <span class="s">&quot;Peter&quot;</span> <span class="o">::</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="kc">true</span>
-    <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="kc">false</span>
-<span class="o">}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[39]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>is_everybodyPresent: [T](xs: List[T])Boolean
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="n">is_everybodyPresent</span><span class="o">(</span><span class="n">people</span><span class="o">)</span>
@@ -14250,13 +14331,13 @@ class Baz[A]  // An invariant class</code></pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>res20: Boolean = true
+<pre>res14: Boolean = true
 </pre>
 </div>
 
@@ -14268,7 +14349,7 @@ class Baz[A]  // An invariant class</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-scala"><pre><span></span><span class="n">is_everybodyPresent</span><span class="o">(</span><span class="s">&quot;John&quot;</span> <span class="o">::</span> <span class="s">&quot;Mary&quot;</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
@@ -14284,13 +14365,13 @@ class Baz[A]  // An invariant class</code></pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>res23: Boolean = false
+<pre>res15: Boolean = false
 </pre>
 </div>
 
@@ -14303,14 +14384,67 @@ class Baz[A]  // An invariant class</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1><p>FP constructs help us build reliable programs that use the type system to verify correctness at compile time.
-FP constructs can create more scalable and parallelizable programs with better control of side effects and better resource utilization.
-Programs can be easier to maintain and reason about.</p>
-<p>For small programs, prototypes and scripts is usually not worth bothering about types, hence Python. Benefits compound beyond a certain scale for medium and large projects.</p>
+<h1 id="There's-much-more....">There's much more....<a class="anchor-link" href="#There's-much-more....">&#182;</a></h1><ul>
+<li>Higher kinded generics </li>
+<li>Futures</li>
+<li>Implicits</li>
+<li>More monads</li>
+<li>Higher rank polymorphism, Shapeless / heterogeneous lists</li>
+<li>Dependent types (not in Scala)</li>
+</ul>
+<p>But we will leave it here for now.</p>
 
 </div>
 </div>
-</div></section></section>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1><ul>
+<li>FP constructs help us build reliable programs that use the type system to verify correctness at compile time.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Frameworks like Spark can leverage FP for easy horizontal scaling abstracting over compute resources.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>FP constructs can create more scalable and parallelizable programs with better control of side effects and better resource utilization.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Larger programs can be easier to maintain and reason about.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong> THANK YOU </strong></p>
+
+</div>
+</div>
+</div></div></section></section>
 </div>
 </div>
 
